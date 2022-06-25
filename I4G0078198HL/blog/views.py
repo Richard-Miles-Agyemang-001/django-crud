@@ -1,3 +1,12 @@
-from django.shortcuts import render
+from django.views.generic.edit import CreateView
+from .models import blog 
 
-# Create your views here.
+
+
+class blogCreateView(CreateView):
+	model = blog
+	fields = [
+		"title ",
+		"description"
+	]
+	template_name = "index.html"
